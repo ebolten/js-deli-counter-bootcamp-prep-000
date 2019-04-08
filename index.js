@@ -19,3 +19,11 @@ function nowServing(currentLine) {
   }
 }
 
+function currentLine (currentLine) {
+    //use for loop to print each person in line
+    console.log("This line is currently: ");
+    for (i = 0; i < currentLine.length; i++) {
+        console.log(`"${i+1}. ${currentLine[i]}"`);
+    }
+}
+
