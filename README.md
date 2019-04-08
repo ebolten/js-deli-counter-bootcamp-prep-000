@@ -17,7 +17,7 @@ At the beginning of the day, the deli is empty and is represented by an empty ar
 
 function takeANumber(size,name) {
   
-  console.log()
+  console.log(`"Welcome ${name}, you are number ${size + 1} in line."`)
   
 }
 
