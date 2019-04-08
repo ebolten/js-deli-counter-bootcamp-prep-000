@@ -21,9 +21,9 @@ At the beginning of the day, the deli is empty and is represented by an empty ar
 
 ### Hint
 
-//Example usage:
+Example usage:
 
-//javascript
+javascript
 var katzDeliLine = [];
 
 takeANumber(katzDeliLine, "Ada"); // "Welcome, Ada. You are number 1 in line."
