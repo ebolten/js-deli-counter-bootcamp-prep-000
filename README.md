@@ -1,4 +1,4 @@
-# Deli Counter Lab
+/*# Deli Counter Lab
 
 ## Objectives
 1. Add elements to an array
@@ -14,29 +14,47 @@ At the beginning of the day, the deli is empty and is represented by an empty ar
 
 
 1. Build a function that a new customer will use when entering the deli. The function, `takeANumber`, should accept two paramaters: the current line of people, along with the new person's name. The function should return a welcome message including the new person's position in line, such as `"Welcome, Ada. You are number 1 in line."`. And don't go being too programmer-y and give them their index. These are normal people. If they are 7th in line, tell them that. Don't get their hopes up by telling them they are number 6 in line.
+*/
 
-function takeANumber(size,name) {
-
-  return console.log(`"Welcome ${name}, you are number ${size + 1} in line."`);
-  
+function takeANumber(currentLine,name) {
+    //add first element of array
+    currentLine.push(name);
+    //returning a string printing number and person in line
+    return console.log(`"Welcome ${name}, you are number ${currentLine.length} in line."`);
 }
-
+/*
 2. Build a function `nowServing`. This function should accept the current line of people (`katzDeliLine`) and return the first person in line and then remove that individual from the line. If there is nobody in line, it should return "There is nobody waiting to be served!"
-
+*/
 function nowServing(currentLine) {
+  //if the line has nobody, return string
   if (currentLine.length == 0) {
-    console.log("There is nobody waiting to be served!");
+    return console.log("There is nobody waiting to be served!");
   }
-  
+  //if line has people, print who is being served
+  else {
+    console.log(`"Currently serving ${currentLine[0]}."`);
+    //delete beginning element of array
+    currentLine.shift();
+    return currentLine;
+  }
 }
 
+function currentLine (currentLine) {
+    //use for loop to print each person in line
+    console.log("This line is currently: ");
+    for (i = 0; i < currentLine.length; i++) {
+        console.log(`"${i+1}. ${currentLine[i]}"`);
+    }
+}
+
+/*
 3. Build a function `currentLine` that accepts the current line of people and returns the current line as a string; for example, if 'katzDeliLine' is currently `["Ada", "Grace"]`, `currentLine(katzDeliLine)` would return `"The line is currently: 1. Ada, 2. Grace"`.  You don't have to use `katzDeliLine` as a variable or parameter name in your function though, it's just an example of a variable that might be passed to it. If there is nobody in line, it should return `"The line is currently empty."`
 
 ### Hint
+*/
+//Example usage:
 
-Example usage:
-
-```javascript
+//javascript
 var katzDeliLine = [];
 
 takeANumber(katzDeliLine, "Ada"); // "Welcome, Ada. You are number 1 in line."
@@ -56,6 +74,5 @@ currentLine(katzDeliLine); // "The line is currently: 1. Grace, 2. Kent, 3. Matz
 nowServing(katzDeliLine); // "Currently serving Grace."
 
 currentLine(katzDeliLine); // "The line is currently: 1. Kent, 2. Matz"
-```
 
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-deli-counter' title='Deli Counter Lab'>Deli Counter Lab</a> on Learn.co and start learning to code for free.</p>
+//<p data-visibility='hidden'>View <a href='https://learn.co/lessons/js-deli-counter' title='Deli Counter Lab'>Deli Counter Lab</a> on Learn.co and start learning to code for free.</p>
